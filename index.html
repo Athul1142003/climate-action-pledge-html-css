@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Climate Action Pledge</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eater&family=Joti+One&display=swap" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <link rel="shortcut icon" href="./leaf icon/leaf.png" type="image/x-icon">
+  <style>
+    :root{
+      --bg:#0b1220; --panel:#121a2b; --muted:#9fb0c9; --text:#eaf2ff; --accent:#4ade80; --accent2:#60a5fa; --danger:#ef4444;
+    }
+    html,body{height:100%;}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#206e19,#7cdf0c 60%, #0c1322);color:var(--text)}
+    a{color:var(--accent2);text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;z-index:50;background:#0b1220cc;backdrop-filter:blur(6px);border-bottom:1px solid #1f2a44
+    }
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .leaf{filter:drop-shadow(0 2px 6px #34d39980)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:1px solid #24314f;background:#121a2b;color:var(--text);cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,#22c55e,#16a34a);border-color:#22c55e;color:#07130a;font-weight:700}
+    .btn.ghost{background:#0e1627}
+    .btn:active{transform:translateY(1px)}
+
+    .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center;padding:28px 0}
+    .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.1;margin:0 0 10px}
+    .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .card{background:var(--panel);border:1px solid #1e2a47;border-radius:16px;padding:16px}
+    .card h3{margin:0 0 6px;font-size:14px;color:var(--muted);font-weight:600}
+    .big{font-size:28px;font-weight:800}
+    .muted{color:var(--muted)}
+
+    .section{padding:30px 0}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:#0e1627;border:1px solid #1f2a44;padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+    form{display:grid;gap:14px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:800px){.hero{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+    label{font-size:12px;color:#b7c6e3}
+    input,select,textarea{background:#0f1727;border:1px solid #223053;border-radius:12px;color:#eaf2ff;padding:10px 12px;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#60a5fa;box-shadow:0 0 0 3px #60a5fa24}
+    .themes{display:grid;gap:12px}
+    fieldset{border:1px solid #223053;border-radius:12px;padding:12px}
+    legend{padding:0 6px;color:#b7c6e3}
+
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 12px;border-bottom:1px solid #1e2a47;text-align:left}
+    tbody tr:hover{background:#0e1627}
+
+    .cert{background:conic-gradient(from 270deg at 30% 20%, #1b2b4c, #09121f 60%, #0b1a2e);border:1px solid #25406d;border-radius:16px;padding:20px;display:none}
+    .cert h2{margin:0 0 6px}
+    .stars{font-size:22px;letter-spacing:1px}
+    .notice{background:#0e1627;border:1px dashed #24406d;border-radius:12px;padding:10px;color:#b7c6e3}
+    .footer-note{font-size:12px;color:#9fb0c9}
+
+    .fade-in{animation:fade .6s ease both}
+    @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><span class="leaf">🌿</span> Climate Action Pledge</div>
+      <nav style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn ghost" href="#form" style="background-image: linear-gradient(red,yellow);box-shadow: 0px 0px 15px red;">Take the Pledge</a>
+        <a class="btn ghost" href="#wall" style="background-image: linear-gradient(red,yellow);box-shadow: 0px 0px 15px red;" >Pledge Wall</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero section flex justify" id="hero">
+      <div> 
+        <img src="./leaf icon/save environment.jpg" class="w-[200px] h-[200px]" style="position: relative;right:270px;top: 200px;border-radius: 10px;" alt="">
+        <div class="pill">Cool Enough to Care ✨</div>
+        <h1>Small actions, <span style="color:#42aae6">massive</span> impact.</h1>
+        <p class="muted text-black" style="color: #07130a;">Join students and working professionals pledging climate-positive habits. Get an instant certificate and inspire others on the public wall.</p>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <a class="btn primary" href="#form">Take the Pledge</a>
+          <a class="btn" href="#wall">See Pledge Wall</a>
+        </div>
+      </div>
+      <div class="card " style="position: relative;left: 300px;">
+        <h3>Live KPIs</h3>
+        <div class="kpi " id="kpis">
+          <div class="card"><h3>Target Pledges</h3><div class="big">1,000,000</div></div>
+          <div class="card"><h3>Achieved</h3><div class="big" id="kpiTotal">0</div></div>
+          <div class="card"><h3>Students</h3><div class="big" id="kpiStudents">0</div></div>
+          <div class="card"><h3>Working Professionals</h3><div class="big" id="kpiProfessionals">0</div></div>
+        </div>
+        <div style="margin-top:10px" class="muted">Workshops joined: <strong id="kpiWorkshops">0</strong></div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section" id="why">
+      <div class="card">
+        <h2 style="margin:0 0 6px">Why take climate action?</h2>
+        <p class="muted">If a million of us switch off, cycle short trips, reduce waste and grow one plant, the collective outcome is enormous. Your pledge nudges the movement forward 🌍.</p>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="section" id="form">
+      <div class="card fade-in" style="background-image: linear-gradient(rgb(69, 114, 69),rgba(0, 255, 170, 0.438));">
+        <h2 style="margin:0 0 6px">Take the Pledge</h2>
+        <p class="notice" style="margin-bottom: 10px;">Mobile number and email are required for validation but never shown publicly. Data is used only for verification and engagement.</p>
+        <form id="pledgeForm">
+          <div class="grid-2">
+            <div>
+              <label for="name">Name *</label>
+              <input id="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="email">Email *</label>
+              <input id="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="mobile">Mobile *</label>
+              <input id="mobile" type="tel" required placeholder="10-digit number" pattern="[0-9]{10}" />
+            </div>
+            <div>
+              <label for="state">State</label>
+              <input id="state" placeholder="e.g., Kerala" />
+            </div>
+            <div>
+              <label for="profile">Profile Type</label>
+              <select id="profile">
+                <option>Student</option>
+                <option>Working Professional</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="themes">
+            <fieldset>
+              <legend>Energy ⚡</legend>
+              <label><input type="checkbox" name="c" value="switch_off"/> Switch off lights & appliances</label><br/>
+              <label><input type="checkbox" name="c" value="public_transport"/> Use public transport / carpool 2× a week</label><br/>
+              <label><input type="checkbox" name="c" value="efficient_appliances"/> Prefer energy-efficient appliances</label>
+            </fieldset>
+            <fieldset>
+              <legend>Waste ♻️</legend>
+              <label><input type="checkbox" name="c" value="carry_bottle"/> Carry bottle / bag; avoid single-use plastic</label><br/>
+              <label><input type="checkbox" name="c" value="segregate"/> Segregate waste at source</label><br/>
+              <label><input type="checkbox" name="c" value="compost"/> Compost kitchen waste</label>
+            </fieldset>
+            <fieldset>
+              <legend>Community 🌱</legend>
+              <label><input type="checkbox" name="c" value="plant_tree"/> Plant a tree / nurture a plant</label><br/>
+              <label><input type="checkbox" name="c" value="workshop"/> Attend a climate workshop</label><br/>
+              <label><input type="checkbox" name="c" value="share_pledge"/> Share pledge & inspire 3 friends</label>
+            </fieldset>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button type="submit" class="btn  primary">Submit & Generate Certificate</button>
+            <button type="button" class="btn" id="btnReset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- CERTIFICATE -->
+      <div id="certificate" class="cert fade-in" style="margin-top:16px">
+        <h2>Certificate of Climate Action</h2>
+        <p id="certName" style="font-size:20px;margin:8px 0 4px;font-weight:700"></p>
+        <p style="margin:6px 0 12px">Cool Enough to Care! 💚</p>
+        <div class="stars" id="certStars">⭐️⭐️⭐️</div>
+        <p class="muted" id="certNote" style="margin-top:10px"></p>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <button class="btn" id="btnDownload">Download PNG</button>
+          <a class="btn ghost" href="#wall">View Pledge on Wall</a>
+        </div>
+        <canvas id="certCanvas" width="1200" height="675" style="display:none"></canvas>
+      </div>
+    </section>
+
+    <!-- WALL -->
+    <section class="section" id="wall" >
+      <div class="card" style="background-image: linear-gradient(rgb(69, 114, 69),rgba(0, 255, 170, 0.438));">
+        <h2 style="margin:0 0 6px">Public Pledge Wall</h2>
+        <p class="muted">Only safe fields are shown. Email and mobile are never displayed.</p>
+        <div style="overflow:auto">
+          <table id="wallTable">
+            <thead>
+              <tr>
+                <th>Pledge ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>State</th>
+                <th>Profile</th>
+                <th>⭐ Love for Planet</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section" id="privacy">
+      <div class="card">
+        <h2 style="margin:0 0 6px">Privacy Note</h2>
+        <p class="muted" style="margin-bottom: 20px;">Mobile Number and Email are required for validation but never shown publicly. Data is used only for verification and engagement.</p>
+      </div>
+      <p class="footer-note" style="margin-top:10px">Built as a demo. Backend can be swapped to Google Sheets / Apps Script or any DB; the current page uses in-browser storage to simulate data.</p>
+    </section>
+  </main>
+
+  <script>
+    // --- Storage helpers (simulate backend with localStorage) ---
+    const KEY = 'climatePledges_v1';
+    const pledges = JSON.parse(localStorage.getItem(KEY) || '[]');
+    function save(){ localStorage.setItem(KEY, JSON.stringify(pledges)); }
+    function nextId(){ return (pledges.at(-1)?.id || 1000) + 1 } // start IDs at 1001
+
+    // --- DOM ---
+    const form = document.getElementById('pledgeForm');
+    const kTotal = document.getElementById('kpiTotal');
+    const kStudents = document.getElementById('kpiStudents');
+    const kPros = document.getElementById('kpiProfessionals');
+    const kWorkshops = document.getElementById('kpiWorkshops');
+    const wallBody = document.querySelector('#wallTable tbody');
+
+    const certBox = document.getElementById('certificate');
+    const certName = document.getElementById('certName');
+    const certStars = document.getElementById('certStars');
+    const certNote = document.getElementById('certNote');
+    const btnReset = document.getElementById('btnReset');
+    const btnDownload = document.getElementById('btnDownload');
+    const canvas = document.getElementById('certCanvas');
+
+    // --- Render KPI & Wall ---
+    function renderAll(){
+      // KPIs
+      const total = pledges.length;
+      const students = pledges.filter(p=>p.profile==='Student').length;
+      const pros = pledges.filter(p=>p.profile==='Working Professional').length;
+      const workshops = pledges.filter(p=>p.commitments?.includes('workshop')).length;
+      kTotal.textContent = total;
+      kStudents.textContent = students;
+      kPros.textContent = pros;
+      kWorkshops.textContent = workshops;
+
+      // Wall
+      wallBody.innerHTML = '';
+      for(const p of pledges.slice().reverse()){ // latest first
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${p.id}</td>
+          <td>${escapeHtml(p.name)}</td>
+          <td>${new Date(p.date).toLocaleDateString()}</td>
+          <td>${escapeHtml(p.state || '')}</td>
+          <td>${escapeHtml(p.profile)}</td>
+          <td>${'❤'.repeat(p.stars)}${'♡'.repeat(Math.max(0,5-p.stars))}</td>`;
+        wallBody.appendChild(tr);
+      }
+    }
+
+    function escapeHtml(s){return String(s).replace(/[&<>\"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
+
+    // --- Form submit ---
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const state = document.getElementById('state').value.trim();
+      const profile = document.getElementById('profile').value;
+      const commitments = Array.from(form.querySelectorAll('input[name="c"]:checked')).map(el=>el.value);
+
+      if(!name || !email || !mobile){ alert('Please fill Name, Email and Mobile'); return; }
+      if(!/^\d{10}$/.test(mobile)){ alert('Enter a valid 10-digit mobile number'); return; }
+
+      const stars = Math.min(5, Math.max(1, commitments.length)); // 1..5 hearts based on how many selected
+      const pledge = { id: nextId(), name, email, mobile, state, profile, commitments, stars, date: Date.now() };
+      pledges.push(pledge); save();
+
+      // Show certificate
+      certName.textContent = name;
+      certStars.textContent = '❤'.repeat(stars) + ' ' + `(${stars}/5)`;
+      certNote.textContent = `You selected ${commitments.length} commitment(s). Share this and inspire others!`;
+      certBox.style.display = 'block';
+
+      // Draw canvas for download
+      drawCertificateToCanvas(name, stars);
+
+      // Reset form selections but keep name visible in cert
+      form.reset();
+
+      // Update KPIs & Wall
+      renderAll();
+
+      // Smooth jump to certificate
+      certBox.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+
+    btnReset.addEventListener('click', ()=>form.reset());
+
+    btnDownload.addEventListener('click', ()=>{
+      const link = document.createElement('a');
+      link.download = 'Climate-Pledge-Certificate.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+
+    function drawCertificateToCanvas(name, stars){
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width, h = canvas.height;
+      // background
+      const grad = ctx.createLinearGradient(0,0,w,h);
+      grad.addColorStop(0,'#0b1220'); grad.addColorStop(1,'#10223f');
+      ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
+
+      // border
+      ctx.strokeStyle = '#4ade80'; ctx.lineWidth = 8; ctx.strokeRect(18,18,w-36,h-36);
+
+      // title
+      ctx.fillStyle = '#eaf2ff';
+      ctx.font = 'bold 48px Inter, Segoe UI, Arial';
+      ctx.fillText('Certificate of Climate Action', 60, 120);
+
+      // subtitle
+      ctx.font = '24px Inter, Segoe UI, Arial';
+      ctx.fillStyle = '#b7c6e3';
+      ctx.fillText('Cool Enough to Care!', 60, 160);
+
+      // name box
+      ctx.fillStyle = '#eaf2ff';
+      ctx.font = 'bold 56px Inter, Segoe UI, Arial';
+      ctx.fillText(name, 60, 260);
+
+      // stars/hearts
+      const hearts = '❤'.repeat(stars) + ' '.repeat(5-stars) + '  ('+stars+'/5)';
+      ctx.fillStyle = '#ff6b6b';
+      ctx.font = 'bold 64px Georgia, serif';
+      ctx.fillText(hearts, 60, 360);
+
+      // footer
+      ctx.fillStyle = '#9fb0c9';
+      ctx.font = '20px Inter, Segoe UI, Arial';
+      const date = new Date().toLocaleDateString();
+      ctx.fillText('Issued on: '+date+'  •  Climate Action Pledge Microsite', 60, 430);
+
+      // badge
+      ctx.beginPath(); ctx.arc(w-120, 120, 60, 0, Math.PI*2); ctx.fillStyle = '#16a34a'; ctx.fill();
+      ctx.fillStyle = '#06250f'; ctx.font='bold 28px Inter'; ctx.fillText('PLEDGED', w-170, 126);
+    }
+
+    // seed with a few demo rows if empty
+    if(pledges.length === 0){
+      const seed = [
+        {name:'Anaya N', email:'a@x.com', mobile:'9999999999', state:'Kerala', profile:'Student', commitments:['switch_off','carry_bottle','workshop'], stars:3},
+        {name:'Rahul S', email:'r@x.com', mobile:'8888888888', state:'Tamil Nadu', profile:'Working Professional', commitments:['segregate'], stars:1}
+      ];
+      seed.forEach((s,i)=>pledges.push({id:1001+i, date:Date.now()- (i+1)*86400000, ...s}));
+      save();
+    }
+
+    renderAll();
+  </script>
+</body>
+</html>
